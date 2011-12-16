@@ -4,7 +4,7 @@
   <title><![CDATA[Michael Campbell]]></title>
   <link href="http://alexcampbell.github.com//atom.xml" rel="self"/>
   <link href="http://alexcampbell.github.com//"/>
-  <updated>2011-12-16T13:24:23-07:00</updated>
+  <updated>2011-12-16T15:25:15-07:00</updated>
   <id>http://alexcampbell.github.com//</id>
   <author>
     <name><![CDATA[Michael Campbell]]></name>
@@ -12,6 +12,85 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Code and stuff]]></title>
+    <link href="http://alexcampbell.github.com//blog/2011/12/16/adjacent-territories/"/>
+    <updated>2011-12-16T14:44:00-07:00</updated>
+    <id>http://alexcampbell.github.com//blog/2011/12/16/adjacent-territories</id>
+    <content type="html"><![CDATA[<p>Over the course of the last year I&#8217;ve been teaching myself various programing languages. Starting with Visual Basic for Applications in efforts to automate the more tedious and reptitive part of my job. From there I&#8217;ve branched out in to many languages. By far I&#8217;ve spent the most time teaching myself C++ and to do so I set out on the quest to recreate a faveorite board game of mine, RISK.</p>
+
+<!--more-->
+
+
+<p>Ah RISK, the game that has pushed many friendships to their limit and many people to curse the name of Australia for years. Quite quickly I had a working &#8216;combat engine&#8217; which works quite nicely. But the problem is in its current form it really isn&#8217;t much of a RISK game. It is still console based and only simulates the attack from one adjacent territory to another with the total number of armies in the attacking territory and defending country based on user input. This set me on the next part of my quest. One that still is ongoing till this day.</p>
+
+<p>Now with the combat part out of the way I needed to work on how the game will know which territories are adjacent to a specific one and what territories are in a certain sector (Continent). I for the longest time was confused on how to over come this, then someone suggested that maybe the Boost Graph Library would work right. But with my limited understanding, I was completely lost in how to implement it in the way that was search-able. After failed web search after web search came up empty. (Except for one thread from 2004 on the GameDev.Net forums which proved to be a waste of time.) Eventually, it came to me just to use a vectors. One to contain the all the sectors, then one that contains every territory in a sector and then one with that contains the adjacent territories to a territory. I&#8217;m quite sure there is much better way to do this, but honestly I&#8217;m content with this and just want to get something that works. So here is the basic look of it.</p>
+
+<figure class='code'><figcaption><span>[Risk] [c++] </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#include &lt;vector>
+</span><span class='line'>#include &lt;string>
+</span><span class='line'>using namespace std;
+</span><span class='line'>int main ()
+</span><span class='line'>{
+</span><span class='line'>    vector&lt;string> Sectors;
+</span><span class='line'>        Sectors.push_back ("NorthAmerica");
+</span><span class='line'>        Sectors.push_back ("SouthAmerica");
+</span><span class='line'>        Sectors.push_back ("Europe");
+</span><span class='line'>        Sectors.push_back ("Asia");
+</span><span class='line'>        Sectors.push_back ("Austrialia");
+</span><span class='line'>        Sectors.push_back ("Africa");
+</span><span class='line'>    vector&lt;string> NorthAmerica;
+</span><span class='line'>        NorthAmerica.push_back ("Alaska");
+</span><span class='line'>        NorthAmerica.push_back ("Alberta");
+</span><span class='line'>        NorthAmerica.push_back ("CentralAmerica");
+</span><span class='line'>        NorthAmerica.push_back ("EasternUnitedStates");
+</span><span class='line'>        NorthAmerica.push_back ("Greenland");
+</span><span class='line'>        NorthAmerica.push_back ("NorthwestTerritory");
+</span><span class='line'>        NorthAmerica.push_back ("Ontario");
+</span><span class='line'>        NorthAmerica.push_back ("Quebec");
+</span><span class='line'>        NorthAmerica.push_back ("WesternUntiedStates");
+</span><span class='line'>    vector&lt;string> Alberta;
+</span><span class='line'>        Alberta.push_back ("NorthwestTerritory");
+</span><span class='line'>        Alberta.push_back ("WesternUntiedStates");
+</span><span class='line'>        Alberta.push_back ("Ontario");
+</span><span class='line'>  return 0;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>That basically is it, I know if some skilled programmer saw that it likely would make them want to kill me, but hey I&#8217;m still learning and I&#8217;m the type of person who insanely dives head first.</p>
+
+<p>Now I need classes which I&#8217;ll get up soon.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Back up]]></title>
