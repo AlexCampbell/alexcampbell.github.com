@@ -4,7 +4,7 @@
   <title><![CDATA[Category: C++ | Michael Campbell]]></title>
   <link href="http://alexcampbell.github.com//blog/categories/c-/atom.xml" rel="self"/>
   <link href="http://alexcampbell.github.com//"/>
-  <updated>2011-12-19T10:11:33-07:00</updated>
+  <updated>2011-12-19T14:01:37-07:00</updated>
   <id>http://alexcampbell.github.com//</id>
   <author>
     <name><![CDATA[Michael Campbell]]></name>
@@ -12,6 +12,94 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[My Poor Attempt at Classes]]></title>
+    <link href="http://alexcampbell.github.com//blog/2011/12/19/my-poor-attempt-at-classes/"/>
+    <updated>2011-12-19T13:40:00-07:00</updated>
+    <id>http://alexcampbell.github.com//blog/2011/12/19/my-poor-attempt-at-classes</id>
+    <content type="html"><![CDATA[<p>So I've been thinking of what the classes should look like for my RISK clone. With this being my first major foray into classes I was naturally a bit confused at first, but being the insane person that I am I jumped head first into it.</p>
+
+<!--more-->
+
+
+<p>I decided to have three basic classes in this part of the game code, each containing what each should 'know'. The first is the class for Sectors:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">class</span> <span class="nc">Sectors</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">string</span> <span class="n">name</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">bonus</span>
+</span><span class='line'><span class="n">vector</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">sting</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">Territories</span>
+</span><span class='line'><span class="kt">bool</span> <span class="n">controled</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">class</span> <span class="nc">Territories</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">string</span> <span class="n">name</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">units</span>
+</span><span class='line'><span class="n">vector</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">string</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">Neighbors</span>
+</span><span class='line'><span class="kt">bool</span> <span class="n">selected</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">class</span> <span class="nc">Player</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">string</span> <span class="n">name</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">reinforcements</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">turnorder</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">playernumber</span>
+</span><span class='line'><span class="n">vector</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">sting</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">CTerritories</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Now I know I likely have screwed up in regards to what needs to be public, protected or private, but this is just me getting the general idea down. I know I can improve on this a lot and soon should start building the whole territory part of the program soon as I can</p>
+
+<p>Also I know there pretty much is only one person watching this blog, but I'm bored and want to get a lot of this out of my head.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Code and stuff]]></title>
