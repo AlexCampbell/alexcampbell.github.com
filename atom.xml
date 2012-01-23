@@ -4,7 +4,7 @@
   <title><![CDATA[Michael Campbell]]></title>
   <link href="http://alexcampbell.github.com//atom.xml" rel="self"/>
   <link href="http://alexcampbell.github.com//"/>
-  <updated>2011-12-19T14:01:37-07:00</updated>
+  <updated>2012-01-23T14:39:51-07:00</updated>
   <id>http://alexcampbell.github.com//</id>
   <author>
     <name><![CDATA[Michael Campbell]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[On Haitus]]></title>
+    <link href="http://alexcampbell.github.com//blog/2012/01/23/on-haitus/"/>
+    <updated>2012-01-23T14:36:00-07:00</updated>
+    <id>http://alexcampbell.github.com//blog/2012/01/23/on-haitus</id>
+    <content type="html"><![CDATA[<p>Well everyone I&#8217;m going to be on a haitus for a little bit. Hopefully, I&#8217;ll have my computer set up soon.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[My Poor Attempt at Classes]]></title>
